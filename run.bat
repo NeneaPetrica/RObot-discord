@@ -1,3 +1,3 @@
 @echo off
-py %~dp0\main.py
+py %~dp0\bot.py
 pause
