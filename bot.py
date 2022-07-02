@@ -2,9 +2,15 @@ import os
 import discord
 import random
 
-TOKEN = str(input("Discord Token: "))
 
-lang = str(input("Set a language: "))
+if os.getenv("DISCORD_TOKEN") == "":
+    TOKEN = str(input("Discord Token: "))
+    lang = str(input("Set a language: "))
+
+else:
+    TOKEN = os.getenv("DISCORD_TOKEN")
+
+
 
 
 client = discord.Client()
