@@ -9,6 +9,7 @@ if os.getenv("DISCORD_TOKEN") == "":
 
 else:
     TOKEN = os.getenv("DISCORD_TOKEN")
+    lang = "en"
 
 
 
