@@ -3,7 +3,7 @@ import discord
 import random
 
 
-if os.environ("DISCORD_TOKEN") == "":
+if len(os.environ("DISCORD_TOKEN")) < 2:
     TOKEN = str(input("Discord Token: "))
     lang = str(input("Set a language: "))
 
