@@ -3,12 +3,12 @@ import discord
 import random
 
 
-if os.getenv("DISCORD_TOKEN") == "":
+if os.environ("DISCORD_TOKEN") == "":
     TOKEN = str(input("Discord Token: "))
     lang = str(input("Set a language: "))
 
 else:
-    TOKEN = os.getenv("DISCORD_TOKEN")
+    TOKEN = os.environ("DISCORD_TOKEN")
     lang = "en"
 
 
