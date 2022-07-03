@@ -12,10 +12,7 @@ else:
     TOKEN = os.getenv("DISCORD_TOKEN")
     lang = "en"
 
-
-client = commands.Bot(command_prefix="!")
-
-
+bot = commands.Bot(command_prefix="!")
 client = discord.Client()
 
 @client.event
@@ -25,7 +22,7 @@ async def on_ready():
     await client.change_presence(status=discord.Status.dnd, activity=activity)
 
 
-@client.command
+@client.command()
 async def ping(ctx):
     await ctx.send("Pong!")
 
@@ -74,7 +71,8 @@ async def on_message(message):
         if message.content == '!quote':
             response = random.choice(quotes)
             await message.channel.send(response)
-            
+
+bot.add_command(ping)  
 
 client.run(TOKEN)
 
