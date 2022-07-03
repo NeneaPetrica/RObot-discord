@@ -72,5 +72,8 @@ async def on_message(message):
             response = random.choice(quotes)
             await message.channel.send(response)
 
+
+bot.add_command(ping)
+
 client.run(TOKEN)
 
