@@ -25,7 +25,7 @@ async def on_ready():
     await client.change_presence(status=discord.Status.dnd, activity=activity)
 
 
-@client.command()
+@client.command
 async def ping(ctx):
     await ctx.send("Pong!")
 
