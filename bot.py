@@ -20,9 +20,8 @@ async def on_ready():
     print("Bot has connected to Discord")
     activity = discord.Game(name="", type=3)
     await client.change_presence(status=discord.Status.dnd, activity=activity)
-    await tree.sync()
 
-@tree.command(name = "test", description = "testing")
+@client.command(name = "test", description = "testing")
 async def slash(interaction: discord.Integration):
     await interaction.response.send_message("maaa")
 
