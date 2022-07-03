@@ -3,12 +3,12 @@ import discord
 import random
 
 
-if len(os.environ("DISCORD_TOKEN")) < 2:
+if len(os.getenv("DISCORD_TOKEN")) < 2:
     TOKEN = str(input("Discord Token: "))
     lang = str(input("Set a language: "))
 
 else:
-    TOKEN = os.environ("DISCORD_TOKEN")
+    TOKEN = os.getenv("DISCORD_TOKEN")
     lang = "en"
 
 
@@ -67,4 +67,4 @@ async def on_message(message):
             response = random.choice(quotes)
             await message.channel.send(response)
 
-client.run(os.environ("DISCORD_TOKEN"))
+client.run(os.getenv("DISCORD_TOKEN"))
