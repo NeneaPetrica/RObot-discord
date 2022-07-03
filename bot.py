@@ -1,5 +1,6 @@
 import os
 import discord
+from discord.ext import commands
 import random
 
 
@@ -12,6 +13,9 @@ else:
     lang = "en"
 
 
+client = commands.Bot(command_prefix="!")
+
+
 client = discord.Client()
 
 @client.event
@@ -19,6 +23,11 @@ async def on_ready():
     print("Bot has connected to Discord")
     activity = discord.Game(name="", type=3)
     await client.change_presence(status=discord.Status.dnd, activity=activity)
+
+
+@client.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
 
 @client.event
 async def on_message(message):
@@ -58,12 +67,14 @@ async def on_message(message):
     
         quotes_file = open('quotes.txt','r')
         quotes = quotes_file.readlines()
+        
     
         temp_quotes = []
 
         if message.content == '!quote':
             response = random.choice(quotes)
             await message.channel.send(response)
+            
 
 client.run(TOKEN)
 
