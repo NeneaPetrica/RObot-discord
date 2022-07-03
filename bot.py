@@ -12,7 +12,6 @@ else:
     TOKEN = os.getenv("DISCORD_TOKEN")
     lang = "en"
 
-bot = commands.Bot(command_prefix="!")
 client = discord.Client()
 
 @client.event
@@ -20,11 +19,6 @@ async def on_ready():
     print("Bot has connected to Discord")
     activity = discord.Game(name="", type=3)
     await client.change_presence(status=discord.Status.dnd, activity=activity)
-
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send("Pong!")
 
 @client.event
 async def on_message(message):
@@ -71,9 +65,11 @@ async def on_message(message):
         if message.content == '!quote':
             response = random.choice(quotes)
             await message.channel.send(response)
-
-
-bot.add_command(ping)
+        
+        if message.content == "!suggest ":
+            temp_save = str.lstrip(message.content, "!suggest ")
+            qfile = open('quotes.txt', 'a')
+            qfile.write(temp_save)
 
 client.run(TOKEN)
 
