@@ -67,4 +67,5 @@ async def on_message(message):
             response = random.choice(quotes)
             await message.channel.send(response)
 
-client.run(os.getenv("DISCORD_TOKEN"))
+client.run(TOKEN)
+
