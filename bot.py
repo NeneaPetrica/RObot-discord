@@ -2,7 +2,9 @@ import os
 import discord
 from discord import app_commands
 from discord.ext import commands
+from discord import *
 import random
+import ctypes
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
@@ -66,6 +68,42 @@ async def balance(interaction: discord.Interaction):
     file.close()
     await interaction.response.send_message(f"You have {temp_int} hugs!")
 
+@bot.tree.command(name="slotmachine", description="Get more slots from gambling!")
+async def slotmachine(interaction: discord.Interaction):
+    emoteArray = []
+
+    for i in range(3):
+        temp_val = random.randint(1,4)
+
+        if(temp_val == 1):
+            temp_emote = ":grapes:"
+        elif(temp_val == 2):
+            temp_emote = ":cherries:"
+        elif (temp_val == 3):
+            temp_emote = ":strawberry:"
+        else:
+            temp_emote = ":watermelon:"
+        
+        emoteArray.append(temp_emote)
+        emote1 = str(emoteArray[0])
+        emote2 = str(emoteArray[1])
+        emote3 = str(emoteArray[2])
+
+        if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
+            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 500 hugs!")
+
+        elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
+            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1000 hugs!")
+
+        elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
+            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1250 hugs!")
+
+        elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
+            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1500 hugs! JACKPOT!")
+        else:
+            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
+
+
 
 @bot.tree.command(name="register_quotebook", description="Makes a server quotebook")
 async def register_quotebook(interaction: discord.Interaction):
@@ -92,7 +130,6 @@ async def add_quote(interaction: discord.Interaction, new_quote: str):
 
     await interaction.response.send_message(f"You added the quote: {new_quote}")
 
-
 @bot.tree.command(name="help", description="Tells what AstroBot can do")
 async def help(interaction: discord.Interaction):
     await interaction.response.send_message(
@@ -103,7 +140,7 @@ async def help(interaction: discord.Interaction):
             "/dice - Roll a dice\n"
             
             "\n ==== Quote books ====\n"
-            "/register_quotebook - Makes a special quotebook for the server \n"
+            "/register-quotebook - Makes a special quotebook for the server \n"
             "/add_quote {new_quote} - Adds a quote to the server quotebook \n"
             "/quote - Says a random quote from the server quotebook \n"
             
