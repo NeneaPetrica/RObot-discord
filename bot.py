@@ -85,23 +85,24 @@ async def slotmachine(interaction: discord.Interaction):
             temp_emote = ":watermelon:"
         
         emoteArray.append(temp_emote)
-        emote1 = str(emoteArray[0])
-        emote2 = str(emoteArray[1])
-        emote3 = str(emoteArray[2])
+        
+    emote1 = str(emoteArray[0])
+    emote2 = str(emoteArray[1])
+    emote3 = str(emoteArray[2])
 
-        if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
-            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 500 hugs!")
+    if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
+        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 500 hugs!")
 
-        elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
-            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1000 hugs!")
+    elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
+        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1000 hugs!")
 
-        elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
-            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1250 hugs!")
+    elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
+        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1250 hugs!")
 
-        elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
-            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1500 hugs! JACKPOT!")
-        else:
-            await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
+    elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
+        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\ You won 1500 hugs! JACKPOT!")
+    else:
+        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
 
 
 
