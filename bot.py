@@ -7,7 +7,7 @@ import random
 import ctypes
 
 token_file = open("token.txt", "r")
-TOKEN = str(os.getenv("DISCORD_TOKEN"))
+TOKEN = str(token_file.read())
 token_file.close()
 
 bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
