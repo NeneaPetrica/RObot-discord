@@ -61,7 +61,7 @@ async def hug(interaction: discord.Interaction, hugged_user: str):
     #file = open(f"./bank/{member}.txt", "w")
     #file.write(str(temp_int + 1))
     #file.close()
-    await interaction.response.send_message(f"{interaction.user.mention} hugged {hugged_user}!" {member}
+    await interaction.response.send_message(f"{interaction.user.mention} hugged {hugged_user}!  {member}"
                                             "\n"
                                             "https://imgur.com/gallery/V6HmXVi")
 
