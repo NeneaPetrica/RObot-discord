@@ -136,7 +136,7 @@ async def slotmachine(interaction: discord.Interaction):
 @bot.tree.command(name="all_in", description="Double or nothing!")
 async def all_in(interaction: discord.Interaction):
     temp_val = random.randint(1,100)
-    if(temp_val == 1):
+    if temp_val == 1:
         file = open(f"./bank/{interaction.user.id}.txt", "r")
         temp_int = int(file.read())
         file = open(f"./bank/{interaction.user.id}.txt", "w")
