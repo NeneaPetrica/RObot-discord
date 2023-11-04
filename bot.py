@@ -49,7 +49,7 @@ async def hug_register(interaction: discord.Interaction):
 
 
 @bot.tree.command(name="hug", description="Give a hug to someone on the server")
-async def hug(interaction: discord.Interaction, hugged_user: discord.Member = None, member: discord.Member):
+async def hug(interaction: discord.Interaction, hugged_user: discord.Member = None):
     file = open(f"./bank/{interaction.user.id}.txt", "r")
     temp_int = int(file.read())
     file = open(f"./bank/{interaction.user.id}.txt", "w")
