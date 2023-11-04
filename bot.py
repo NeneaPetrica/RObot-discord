@@ -56,12 +56,12 @@ async def hug(interaction: discord.Interaction, hugged_user: str):
     file.write(str(temp_int - 1))
     file.close()
     member = discord.utils.get(message.guild.members, name=hugged_user)
-    file = open(f"./bank/{member}.txt", "r")
-    temp_int = int(file.read())
-    file = open(f"./bank/{member}.txt", "w")
-    file.write(str(temp_int + 1))
-    file.close()
-    await interaction.response.send_message(f"{interaction.user.mention} hugged {hugged_user}!"
+    #file = open(f"./bank/{member}.txt", "r")
+    #temp_int = int(file.read())
+    #file = open(f"./bank/{member}.txt", "w")
+    #file.write(str(temp_int + 1))
+    #file.close()
+    await interaction.response.send_message(f"{interaction.user.mention} hugged {hugged_user}!" {member}
                                             "\n"
                                             "https://imgur.com/gallery/V6HmXVi")
 
