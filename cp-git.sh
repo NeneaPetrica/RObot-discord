@@ -1,0 +1,1 @@
+git pull git@github.com:mircea35/AstroBot-Discord.git
