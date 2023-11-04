@@ -62,7 +62,7 @@ async def hug(interaction: discord.Interaction, hugged_user: discord.Member = No
     #file.write(str(temp_int + 1))
     #file.close()
 
-    await interaction.response.send_message(f"{interaction.user.mention} hugged {hugged_user}!  {hugged_user.id}"
+    await interaction.response.send_message(f"{interaction.user.mention} hugged <@{hugged_user}>! {hugged_user.id}"
                                             "\n"
                                             "https://imgur.com/gallery/V6HmXVi")
 
