@@ -55,14 +55,16 @@ async def hug(interaction: discord.Interaction, hugged_user: discord.Member = No
     file = open(f"./bank/{interaction.user.id}.txt", "w")
     file.write(str(temp_int - 1))
     file.close()
-    #member = discord.utils.get(message.guild.members, name=hugged_user)
-    #file = open(f"./bank/{member}.txt", "r")
-    #temp_int = int(file.read())
-    #file = open(f"./bank/{member}.txt", "w")
-    #file.write(str(temp_int + 1))
-    #file.close()
+    try:
+        file = open(f"./bank/{hugged_user.id}.txt", "r")
+        temp_int = int(file.read())
+        file = open(f"./bank/{hugged_user.id}.txt", "w")
+        file.write(str(temp_int + 1))
+        file.close()
+    except:
+        await interaction.response.send_message("The hugged user does not have a HugBank Account! :(")
 
-    await interaction.response.send_message(f"{interaction.user.mention} hugged <@{hugged_user.id}>! {hugged_user.id}"
+    await interaction.response.send_message(f"{interaction.user.mention} hugged <@{hugged_user.id}>!"
                                             "\n"
                                             "https://imgur.com/gallery/V6HmXVi")
 
