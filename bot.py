@@ -144,11 +144,7 @@ async def all_in(interaction: discord.Interaction):
         file.close()
         await interaction.response.send_message("You've doubled your Hugs!!! Really lucky!")
     else:
-        file = open(f"./bank/{interaction.user.id}.txt", "r")
-        temp_int = int(file.read())
-        file = open(f"./bank/{interaction.user.id}.txt", "w")
-        file.write(str(0))
-        file.close()
+        writeHugs(0)
         await interaction.response.send_message("You've lost all hugs. T-T")
 
 
@@ -226,3 +222,10 @@ async def on_message(message):
         await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
 
 bot.run(TOKEN)
+
+def writeHugs(hugs = int):
+    file = open(f"./bank/{interaction.user.id}.txt", "r")
+    temp_int = int(file.read())
+    file = open(f"./bank/{interaction.user.id}.txt", "w")
+    file.write(str(temp_int + hugs))
+    file.close()
