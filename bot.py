@@ -180,10 +180,11 @@ async def add_quote(interaction: discord.Interaction, new_quote: str):
 @bot.tree.command(name="help", description="Tells what AstroBot can do")
 async def help(interaction: discord.Interaction):
     await interaction.response.send_message(
-            "```Hi! I am here to make your day a bit better!\n"
-            "This is what I can do:\n"
-            
-            "\n /hello - Says hi to you :)\n"
+            "```Hi, my name is AstroBot! I am here to make your day a bit better!\n"
+            "This is what I can do:\n \n"
+
+            "\n ==== Small Commands ====\n"
+            "/hello - Says hi to you :)\n"
             "/dice - Roll a dice\n"
             
             "\n ==== Quote books ====\n"
