@@ -12,6 +12,12 @@ token_file.close()
 
 bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
 
+def writeHugs(hugs = int):
+    file = open(f"./bank/{interaction.user.id}.txt", "r")
+    temp_int = int(file.read())
+    file = open(f"./bank/{interaction.user.id}.txt", "w")
+    file.write(str(temp_int + hugs))
+    file.close()
 
 @bot.event
 async def on_ready():
@@ -223,9 +229,3 @@ async def on_message(message):
 
 bot.run(TOKEN)
 
-def writeHugs(hugs = int):
-    file = open(f"./bank/{interaction.user.id}.txt", "r")
-    temp_int = int(file.read())
-    file = open(f"./bank/{interaction.user.id}.txt", "w")
-    file.write(str(temp_int + hugs))
-    file.close()
