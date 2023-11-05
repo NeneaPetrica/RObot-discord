@@ -12,10 +12,10 @@ token_file.close()
 
 bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
 
-def writeHugs(interaction: discord.Interaction, hugs = int):
-    file = open(f"./bank/{interaction.user.id}.txt", "r")
+def writeHugs(user_id, hugs = int):
+    file = open(f"./bank/{user_id}.txt", "r")
     temp_int = int(file.read())
-    file = open(f"./bank/{interaction.user.id}.txt", "w")
+    file = open(f"./bank/{user_id}.txt", "w")
     file.write(str(temp_int + hugs))
     file.close()
 
@@ -105,35 +105,39 @@ async def slotmachine(interaction: discord.Interaction):
     emote3 = str(emoteArray[2])
 
     if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
-        file = open(f"./bank/{interaction.user.id}.txt", "r")
-        temp_int = int(file.read())
-        file = open(f"./bank/{interaction.user.id}.txt", "w")
-        file.write(str(temp_int + 500))
-        file.close()
+        #file = open(f"./bank/{interaction.user.id}.txt", "r")
+        #temp_int = int(file.read())
+        #file = open(f"./bank/{interaction.user.id}.txt", "w")
+        #file.write(str(temp_int + 500))
+        #file.close()
+        writeHugs(interaction.user.id, 500)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 500 hugs!")
 
     elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
-        file = open(f"./bank/{interaction.user.id}.txt", "r")
-        temp_int = int(file.read())
-        file = open(f"./bank/{interaction.user.id}.txt", "w")
-        file.write(str(temp_int + 1000))
-        file.close()
+        #file = open(f"./bank/{interaction.user.id}.txt", "r")
+        #temp_int = int(file.read())
+        #file = open(f"./bank/{interaction.user.id}.txt", "w")
+        #file.write(str(temp_int + 1000))
+        #file.close()
+        writeHugs(interaction.user.id, 1000)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1000 hugs!")
 
     elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
-        file = open(f"./bank/{interaction.user.id}.txt", "r")
-        temp_int = int(file.read())
-        file = open(f"./bank/{interaction.user.id}.txt", "w")
-        file.write(str(temp_int + 1250))
-        file.close()
+        #file = open(f"./bank/{interaction.user.id}.txt", "r")
+        #temp_int = int(file.read())
+        #file = open(f"./bank/{interaction.user.id}.txt", "w")
+        #file.write(str(temp_int + 1250))
+        #file.close()
+        writeHugs(interaction.user.id, 1250)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1250 hugs!")
 
     elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
-        file = open(f"./bank/{interaction.user.id}.txt", "r")
-        temp_int = int(file.read())
-        file = open(f"./bank/{interaction.user.id}.txt", "w")
-        file.write(str(temp_int + 100000))
-        file.close()
+        #file = open(f"./bank/{interaction.user.id}.txt", "r")
+        #temp_int = int(file.read())
+        #file = open(f"./bank/{interaction.user.id}.txt", "w")
+        #file.write(str(temp_int + 100000))
+        #file.close()
+        writeHugs(interaction.user.id, 100000)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!")
     else:
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
@@ -150,7 +154,7 @@ async def all_in(interaction: discord.Interaction):
         file.close()
         await interaction.response.send_message("You've doubled your Hugs!!! Really lucky!")
     else:
-        writeHugs(0)
+        writeHugs(interaction.user.id, 0)
         await interaction.response.send_message("You've lost all hugs. T-T")
 
 
