@@ -126,9 +126,9 @@ async def slotmachine(interaction: discord.Interaction):
         file = open(f"./bank/{interaction.user.id}.txt", "r")
         temp_int = int(file.read())
         file = open(f"./bank/{interaction.user.id}.txt", "w")
-        file.write(str(temp_int + 1500))
+        file.write(str(temp_int + 100000))
         file.close()
-        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1500 hugs! JACKPOT!")
+        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!")
     else:
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
 
@@ -195,6 +195,16 @@ async def help(interaction: discord.Interaction):
             "/hug_register - Registers you to HugBank\n"
             "/hug {tag a user} - Sends a hug to the hugged user\n"
             "/balance - See the hug balance\n"
+
+            "\n ==== Gambling ====\n"
+            "/slotmachine - You play slots and can win Hugs!\n \n"
+
+            "Slots Prizes: \n >:grapes:|:grapes:|:grapes:< for 500 hugs\n"
+            ">:cherries:|:cherries:|:cherries:< for 1000 hugs\n"
+            ">:strawberry:|:strawberry:|:strawberry:< for 1250 hugs\n"
+            ">:strawberry:|:strawberry:|:strawberry:< for the JACKPOT (which is secret)\n \n"
+            
+            "/all_in - Doubles your Hugs or lose them all.\n"
             "\n```")
 
 
