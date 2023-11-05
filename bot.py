@@ -199,8 +199,9 @@ async def help(interaction: discord.Interaction):
             "\n ==== Gambling ====\n"
             "/slotmachine - You play slots and can win Hugs!\n \n"
 
-            "Slots Prizes: \n >:grapes:|:grapes:|:grapes:< for 500 hugs\n"
-            "><:cherries:>|<:cherries:>|<:cherries:>< for 1000 hugs\n"
+            "Slots Prizes: \n"
+            ">:grapes:|:grapes:|:grapes:< for 500 hugs\n"
+            ">:cherries:|:cherries:|:cherries:< for 1000 hugs\n"
             ">:strawberry:|:strawberry:|:strawberry:< for 1250 hugs\n"
             ">:strawberry:|:strawberry:|:strawberry:< for the JACKPOT (which is secret)\n \n"
 
