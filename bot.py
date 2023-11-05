@@ -62,11 +62,7 @@ async def hug(interaction: discord.Interaction, hugged_user: discord.Member = No
     file.write(str(temp_int - 1))
     file.close()
     try:
-        file = open(f"./bank/{hugged_user.id}.txt", "r")
-        temp_int = int(file.read())
-        file = open(f"./bank/{hugged_user.id}.txt", "w")
-        file.write(str(temp_int + 1))
-        file.close()
+        writeHugs(hugged_user.id, 1)
     except:
         await interaction.response.send_message("The hugged user does not have a HugBank Account! :(")
 
@@ -105,38 +101,18 @@ async def slotmachine(interaction: discord.Interaction):
     emote3 = str(emoteArray[2])
 
     if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
-        #file = open(f"./bank/{interaction.user.id}.txt", "r")
-        #temp_int = int(file.read())
-        #file = open(f"./bank/{interaction.user.id}.txt", "w")
-        #file.write(str(temp_int + 500))
-        #file.close()
         writeHugs(interaction.user.id, 500)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 500 hugs!")
 
     elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
-        #file = open(f"./bank/{interaction.user.id}.txt", "r")
-        #temp_int = int(file.read())
-        #file = open(f"./bank/{interaction.user.id}.txt", "w")
-        #file.write(str(temp_int + 1000))
-        #file.close()
         writeHugs(interaction.user.id, 1000)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1000 hugs!")
 
     elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
-        #file = open(f"./bank/{interaction.user.id}.txt", "r")
-        #temp_int = int(file.read())
-        #file = open(f"./bank/{interaction.user.id}.txt", "w")
-        #file.write(str(temp_int + 1250))
-        #file.close()
         writeHugs(interaction.user.id, 1250)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1250 hugs!")
 
     elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
-        #file = open(f"./bank/{interaction.user.id}.txt", "r")
-        #temp_int = int(file.read())
-        #file = open(f"./bank/{interaction.user.id}.txt", "w")
-        #file.write(str(temp_int + 100000))
-        #file.close()
         writeHugs(interaction.user.id, 100000)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!")
     else:
