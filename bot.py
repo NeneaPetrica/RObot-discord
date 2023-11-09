@@ -130,7 +130,7 @@ async def all_in(interaction: discord.Interaction):
         file.close()
         await interaction.response.send_message("You've doubled your Hugs!!! Really lucky!")
     else:
-        writeHugs(interaction.user.id, 0)
+        writeHugs(interaction.user.id, temp_int)
         await interaction.response.send_message("You've lost all hugs. T-T")
 
 
