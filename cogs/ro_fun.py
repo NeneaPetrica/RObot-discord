@@ -18,6 +18,7 @@ class ro_fun(commands.Cog):
 
         if 'la multi ani' in message.content.lower():
             await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
+        await self.process_commands(message)
 
 
 async def setup(bot):
