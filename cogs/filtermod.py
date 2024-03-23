@@ -20,20 +20,20 @@ class filtermod(commands.Cog):
 
     @commands.command()
     async def filtermod(self, ctx):
-            """Toggles the filter setting"""
-            file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
-            temp_int = int(file.read())
+        """Toggles the filter setting"""
+        file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
+        temp_int = int(file.read())
 
-            if temp_int == 0:
-                file = open(f"./configs/{ctx.guild.id}-filter.txt", "w")
-                file.write(str(1))
-                file.close()
-                await ctx.send("Filter is now turned on for this server.")
-            else:
-                file = open(f"./bank/{ctx.guild.id}-filter.txt", "w")
-                file.write(str(0))
-                file.close()
-                await ctx.send("Filter is now turned on for this server.")
+        if temp_int == 0:
+            file = open(f"./configs/{ctx.guild.id}-filter.txt", "w")
+            file.write(str(1))
+            file.close()
+            await ctx.send("Filter is now turned on for this server.")
+        else:
+            file = open(f"./bank/{ctx.guild.id}-filter.txt", "w")
+            file.write(str(0))
+            file.close()
+            await ctx.send("Filter is now turned on for this server.")
 
 async def setup(bot):
     await bot.add_cog(filtermod(bot))
