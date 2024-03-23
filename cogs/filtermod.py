@@ -19,7 +19,7 @@ class filtermod(commands.Cog):
             else:
                 await print(f"Guild {interaction.guild.id} has filter turned off")
 
-    @commands.command()
+    @commands.command(name="toggle_filter", description="Tells what AstroBot can do")
     async def toggle_filter(self, ctx):
             
             file = open(f"./configs/{discord.interaction.guild.id}-filter.txt", "r")
