@@ -5,7 +5,7 @@ from discord.ext import commands
 from discord import *
 import random
 import ctypes
-from filtermod.py import *
+from filtermod import *
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
