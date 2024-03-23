@@ -13,10 +13,10 @@ class filtermod(commands.Cog):
             file = open(f"./bank/{interaction.guild.id}.txt", "r")
             temp_int = int(file.read())
             if temp_int == 1:
-                await message.delete()
-                await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
+                message.delete()
+                message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
             else:
-                await print(f"Guild {interaction.guild.id} has filter turned off")
+                print(f"Guild {interaction.guild.id} has filter turned off")
 
     @commands.command(name="filtermod", description="Toggles the filter")
     async def filtermod(self, ctx):
@@ -28,13 +28,12 @@ class filtermod(commands.Cog):
                 file = open(f"./configs/{ctx.guild.id}-filter.txt", "w")
                 file.write(str(1))
                 file.close()
-                await ctx.send("Filter is now turned on for this server.")
+                ctx.send("Filter is now turned on for this server.")
             else:
                 file = open(f"./bank/{ctx.guild.id}-filter.txt", "w")
                 file.write(str(0))
                 file.close()
-                await ctx.send("Filter is now turned on for this server.")
-            pass
+                ctx.send("Filter is now turned on for this server.")
 
 async def setup(bot):
     await bot.add_cog(filtermod(bot))
