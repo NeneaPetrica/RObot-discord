@@ -4,7 +4,7 @@ from discord import *
 from discord.ext.commands import has_permissions
 import asyncio
 
-class filtermod(commands.Cog,  name="Basic Commands"):
+class filtermod(commands.Cog, name="Basic Commands"):
     def __init__(self, bot):
         self.bot = bot
 
