@@ -21,7 +21,7 @@ class filtermod(commands.Cog):
 
     @commands.command()
     @has_permissions(administrator=True)
-    async def toggle_filter(self, ctx, interaction: discord.Interaction):
+    async def toggle_filter(self, ctx, *, interaction: discord.Interaction):
             
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
