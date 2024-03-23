@@ -6,6 +6,8 @@ class filtermod(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
+    async def on_ready(self):
+        print("Filter is ready")
     async def on_message(self, message: discord.Message, interaction: discord.Interaction):
         if 'https://www.instagram.com/' in message.content.lower():
             file = open(f"./bank/{interaction.guild.id}.txt", "r")
@@ -17,7 +19,7 @@ class filtermod(commands.Cog):
                 await print(f"Guild {interaction.guild.id} has filter turned off")
 
     @commands.command()
-    async def togglefilter(self, ctx):
+    async def toggle_filter(self, ctx):
             """Toggles the filter setting"""
             file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
