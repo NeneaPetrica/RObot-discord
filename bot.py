@@ -1,6 +1,5 @@
 import os
 import discord
-from discord import app_commands
 from discord.ext import commands
 from discord import *
 import random
@@ -11,7 +10,7 @@ token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
 token_file.close()
 
-bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
+bot = commands.Bot(command_prefix="/", intents=discord.Intents.all(), help_command= None)
 
 def writeHugs(user_id, hugs = int):
     file = open(f"./bank/{user_id}.txt", "r")
