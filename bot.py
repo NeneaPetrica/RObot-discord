@@ -201,22 +201,6 @@ async def help(interaction: discord.Interaction):
             "/all_in - Doubles your Hugs or lose them all.\n"
             "\n```")
 
-
-@bot.event
-async def on_message(message):
-
-    if 'bag pula' in message.content.lower():
-        await message.channel.send('Si eu sa mor!')
-
-    if 'mario e gae' in message.content.lower():
-        await message.channel.send('Cel mai gaee')
-
-    if 'sugi pula' in message.content.lower():
-        await message.channel.send('O sugi tu ma!')
-
-    if 'la multi ani' in message.content.lower():
-        await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
-
 async def main():
     await load()
     await bot.start(TOKEN)
