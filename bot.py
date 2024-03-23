@@ -13,12 +13,12 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="/", intents = intents, help_command= None)
 
-def writeHugs(user_id, hugs = int):
-    file = open(f"./bank/{user_id}.txt", "r")
-    temp_int = int(file.read())
-    file = open(f"./bank/{user_id}.txt", "w")
-    file.write(str(temp_int + hugs))
-    file.close()
+#def writeHugs(user_id, hugs = int):
+#    file = open(f"./bank/{user_id}.txt", "r")
+#    temp_int = int(file.read())
+#    file = open(f"./bank/{user_id}.txt", "w")
+#    file.write(str(temp_int + hugs))
+#    file.close()
 
 
 async def load():
