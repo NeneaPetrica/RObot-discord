@@ -9,9 +9,6 @@ class filtermod(commands.Cog):
 
 
     @commands.Cog.listener()
-    async def on_ready(self):
-        print("Filter is ready")
-        
     async def on_message(self, message: discord.Message):
         if 'https://www.instagram.com/' in message.content.lower():
             file = open(f"./configs/{message.guild.id}.txt", "r")
