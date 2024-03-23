@@ -36,6 +36,7 @@ class filtermod(commands.Cog, name="Basic Commands"):
                 file.write(str(0))
                 file.close()
                 await ctx.send("Filter is now turned on for this server.")
+            pass
 
 async def setup(bot):
     await bot.add_cog(filtermod(bot))
