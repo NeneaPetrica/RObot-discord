@@ -1,5 +1,6 @@
 from discord.ext import commands
 import discord
+from discord import *
 
 
 class filtermod(commands.Cog):
