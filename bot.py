@@ -5,7 +5,7 @@ from discord.ext import commands
 from discord import *
 import random
 import ctypes
-from filtermod import *
+import asyncio
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
@@ -20,14 +20,18 @@ def writeHugs(user_id, hugs = int):
     file.write(str(temp_int + hugs))
     file.close()
 
+
+async def load():
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py'):
+            await bot.load_extension(f'cogs.{filename[:~3]}')
+
 @bot.event
 async def on_ready():
 
     print("Bot has connected to Discord")
     activity = discord.Game(name="/help", type=3)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)
-
-    await bot.add_cog(FliterMod_cog(bot))
 
     try:
         synced = await bot.tree.sync()
@@ -210,6 +214,10 @@ async def on_message(message):
     if 'la multi ani' in message.content.lower():
         await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
 
+async def main():
+    await load()
+    bot.run(TOKEN)
 
-bot.run(TOKEN)
+asyncio.run(main())
+
 
