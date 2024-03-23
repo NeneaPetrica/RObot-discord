@@ -18,7 +18,7 @@ class filtermod(commands.Cog):
             else:
                 await print(f"Guild {interaction.guild.id} has filter turned off")
 
-    @commands.command()
+    @commands.Cog.command()
     async def filtermod(self, ctx):
             """Toggles the filter setting"""
             file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
