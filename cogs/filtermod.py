@@ -14,7 +14,7 @@ class filtermod(commands.Cog):
         
     async def on_message(self, message: discord.Message, interaction: discord.Interaction):
         if 'https://www.instagram.com/' in message.content.lower():
-            file = open(f"./bank/{interaction.guild.id}.txt", "r")
+            file = open(f"./configs/{interaction.guild.id}.txt", "r")
             temp_int = int(file.read())
             if temp_int == 1:
                 await message.delete()
@@ -31,16 +31,16 @@ class filtermod(commands.Cog):
             file.close()
             print("Created FilterMod File")
 
-        file = open(f"../configs/{interaction.guild.id}-filter.txt", "r")
+        file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
 
         if temp_int == 0:
-            file = open(f"../configs/{interaction.guild.id}-filter.txt", "w")
+            file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(1))
             file.close()
             await interaction.response.send_message("Filter is now turned on for this server.")
         else:
-            file = open(f"../configs/{interaction.guild.id}-filter.txt", "w")
+            file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(0))
             file.close()
             await interaction.response.send_message("Filter is now turned on for this server.")
