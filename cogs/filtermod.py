@@ -18,21 +18,20 @@ class filtermod(commands.Cog, name="Basic Commands"):
                 await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
             else:
                 await print(f"Guild {interaction.guild.id} has filter turned off")
-            pass
 
     @commands.command()
-    async def toggle_filter(self, ctx, interaction: discord.Interaction):
+    async def toggle_filter(self, ctx):
             """Toggles the filter setting"""
-            file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
+            file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
 
             if temp_int == 0:
-                file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
+                file = open(f"./configs/{ctx.guild.id}-filter.txt", "w")
                 file.write(str(1))
                 file.close()
                 await ctx.send("Filter is now turned on for this server.")
             else:
-                file = open(f"./bank/{interaction.guild.id}-filter.txt", "w")
+                file = open(f"./bank/{ctx.guild.id}-filter.txt", "w")
                 file.write(str(0))
                 file.close()
                 await ctx.send("Filter is now turned on for this server.")
