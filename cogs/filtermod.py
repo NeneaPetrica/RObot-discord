@@ -9,10 +9,9 @@ class filtermod(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if 'https://www.instagram.com/' in message.content.lower():
+        if 'https://www.instagram.com/' or 'https://ww.instagram.com/' or 'https://w.instagram.com/' in message.content.lower():
             file = open(f"./configs/{message.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
-
 
             if temp_int == 1:
                 file.close()
