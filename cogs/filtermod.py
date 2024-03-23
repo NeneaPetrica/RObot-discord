@@ -35,5 +35,9 @@ class filtermod(commands.Cog):
             file.close()
             await ctx.send("Filter is now turned on for this server.")
 
+    @commands.command()
+    async def mimic(self, ctx):
+        await ctx.reply("test command")
+
 async def setup(bot):
     await bot.add_cog(filtermod(bot))
