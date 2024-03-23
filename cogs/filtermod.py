@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 
-class filtermod(commands.Cog, name="Basic Commands"):
+class filtermod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
