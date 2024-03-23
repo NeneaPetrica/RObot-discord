@@ -1,7 +1,7 @@
 from discord.ext import commands
 import discord
 from discord import app_commands
-
+import os
 
 class filtermod(commands.Cog):
     def __init__(self, bot : commands.Bot):
@@ -11,6 +11,7 @@ class filtermod(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print("Filter is ready")
+        
     async def on_message(self, message: discord.Message, interaction: discord.Interaction):
         if 'https://www.instagram.com/' in message.content.lower():
             file = open(f"./bank/{interaction.guild.id}.txt", "r")
@@ -24,7 +25,12 @@ class filtermod(commands.Cog):
 
     @app_commands.command(name = "togglefilter", description= "What? It works????")
     async def togglefilter(self, interaction: discord.Interaction):
-        file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
+        if os.path.isfile(f"../configs/{interaction.guild.id}-filter.txt") == False:
+            file = open(f"../configs/{interaction.guild.id}-filter.txt", "w")
+            file.write(str(1))
+            file.close()
+
+        file = open(f"../configs/{interaction.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
 
         if temp_int == 0:
