@@ -9,7 +9,7 @@ class filtermod(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def toggle_filter(self, ctx, *, interaction: discord.Interaction):
+    async def toggle_filter(self, ctx, interaction: discord.Interaction):
             """Toggles the filter setting"""
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
