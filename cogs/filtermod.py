@@ -9,7 +9,8 @@ class filtermod(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if 'https://www.instagram.com/' or 'https://ww.instagram.com/' or 'https://w.instagram.com/' in message.content.lower():
+
+        async def deleteCheck():
             file = open(f"./configs/{message.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
 
@@ -20,6 +21,16 @@ class filtermod(commands.Cog):
             if temp_int == 0:
                 file.close()
                 await print(f"Guild {message.guild.id} has filter turned off")
+
+        if 'https://www.instagram.com/' in message.content.lower():
+            deleteCheck()
+
+        if 'https://w.instagram.com/' in message.content.lower():
+            deleteCheck()
+
+        if 'https://ww.instagram.com/' in message.content.lower():
+            deleteCheck()
+
 
     @app_commands.command(name = "togglefilter", description= "Toggles the social media filter")
     @app_commands.checks.has_permissions(manage_guild = True)
