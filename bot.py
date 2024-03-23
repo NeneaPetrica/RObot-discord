@@ -1,9 +1,7 @@
 import os
 import discord
 from discord.ext import commands
-from discord import *
 import random
-import ctypes
 import asyncio
 
 token_file = open("token.txt", "r")
