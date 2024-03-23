@@ -11,7 +11,7 @@ token_file.close()
 intents=discord.Intents.all()
 intents.members = True
 
-bot = commands.Bot(command_prefix="/", intents = intents, help_command= None)
+bot = commands.Bot(command_prefix="/", intents = discord.Intents.all(), help_command= None)
 
 def writeHugs(user_id, hugs = int):
     file = open(f"./bank/{user_id}.txt", "r")
