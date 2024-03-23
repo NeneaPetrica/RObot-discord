@@ -8,9 +8,10 @@ class filtermod(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, message: discord.Message):
 
-        async def deleteCheck():
+
+    async def on_message(self, message: discord.Message):
+        if 'https://www.instagram.com/' in message.content.lower():
             file = open(f"./configs/{message.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
 
@@ -22,14 +23,29 @@ class filtermod(commands.Cog):
                 file.close()
                 await print(f"Guild {message.guild.id} has filter turned off")
 
-        if 'https://www.instagram.com/' in message.content.lower():
-            deleteCheck()
-
         if 'https://w.instagram.com/' in message.content.lower():
-            deleteCheck()
+            file = open(f"./configs/{message.guild.id}-filter.txt", "r")
+            temp_int = int(file.read())
+
+            if temp_int == 1:
+                file.close()
+                await message.delete()
+                await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
+            if temp_int == 0:
+                file.close()
+                await print(f"Guild {message.guild.id} has filter turned off")
 
         if 'https://ww.instagram.com/' in message.content.lower():
-            deleteCheck()
+            file = open(f"./configs/{message.guild.id}-filter.txt", "r")
+            temp_int = int(file.read())
+
+            if temp_int == 1:
+                file.close()
+                await message.delete()
+                await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
+            if temp_int == 0:
+                file.close()
+                await print(f"Guild {message.guild.id} has filter turned off")
 
 
     @app_commands.command(name = "togglefilter", description= "Toggles the social media filter")
