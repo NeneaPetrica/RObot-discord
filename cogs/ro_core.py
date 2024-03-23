@@ -11,7 +11,7 @@ def writeHugs(user_id, hugs = int):
     file.write(str(temp_int + hugs))
     file.close()
 
-class core(commands.Cog):
+class ro_core(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -188,7 +188,7 @@ class core(commands.Cog):
                 "\n```")
 
 async def setup(bot):
-    await bot.add_cog(core(bot))
+    await bot.add_cog(ro_core(bot))
 
 
     
