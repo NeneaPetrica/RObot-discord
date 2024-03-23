@@ -5,6 +5,7 @@ from discord.ext import commands
 from discord import *
 import random
 import ctypes
+from filtermod.py import *
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
@@ -26,7 +27,7 @@ async def on_ready():
     activity = discord.Game(name="/help", type=3)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)
     await bot.add_cog(FilterMod(bot))
-    
+
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} command(s)!")
