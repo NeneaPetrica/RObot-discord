@@ -26,7 +26,8 @@ async def on_ready():
     print("Bot has connected to Discord")
     activity = discord.Game(name="/help", type=3)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)
-    await bot.add_cog(FilterMod(bot))
+
+    await bot.add_cog(FliterMod_cog(bot))
 
     try:
         synced = await bot.tree.sync()
