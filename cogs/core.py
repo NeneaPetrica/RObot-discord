@@ -6,6 +6,14 @@ class core(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+
+    def writeHugs(user_id, hugs = int):
+        file = open(f"./bank/{user_id}.txt", "r")
+        temp_int = int(file.read())
+        file = open(f"./bank/{user_id}.txt", "w")
+        file.write(str(temp_int + hugs))
+        file.close()
+
     @commands.Cog.listener()
     async def on_ready(self):
         print("Core is ready")
