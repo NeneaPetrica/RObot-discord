@@ -21,7 +21,7 @@ class filtermod(commands.Cog):
 
 
     @commands.command()
-    async def filtermod(self, ctx, *, member: discord.Member = None):
+    async def togglefilter(self, ctx, *, member: discord.Member = None):
         """Toggles the filter setting"""
         file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
