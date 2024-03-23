@@ -1,5 +1,6 @@
 from discord.ext import commands
 import discord
+from discord import app_commands
 
 
 class filtermod(commands.Cog):
@@ -22,9 +23,8 @@ class filtermod(commands.Cog):
         await self.process_commands(message)
 
 
-    @discord.app_commands.command(name = "togglefilter")
+    @app_commands.command(name = "togglefilter")
     async def togglefilter(self, interaction: discord.Interaction):
-        """Toggles the filter setting"""
         file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
 
