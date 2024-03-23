@@ -1,7 +1,5 @@
 import discord
 from discord.ext import commands
-from discord import *
-from discord.ext.commands import has_permissions
 import asyncio
 
 class filtermod(commands.Cog, name="Basic Commands"):
