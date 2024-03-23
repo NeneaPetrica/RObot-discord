@@ -14,7 +14,7 @@ class filtermod(commands.Cog):
         
     async def on_message(self, message: discord.Message, interaction: discord.Interaction):
         if 'https://www.instagram.com/' in message.content.lower():
-            file = open(f"./configs/{interaction.guild.id}.txt", "r")
+            file = open(f"./configs/{message.guild.id}.txt", "r")
             temp_int = int(file.read())
             if temp_int == 1:
                 await message.delete()
