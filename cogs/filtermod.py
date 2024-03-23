@@ -7,7 +7,6 @@ class filtermod(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
 
-
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
         if 'https://www.instagram.com/' in message.content.lower():
