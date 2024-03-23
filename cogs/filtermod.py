@@ -23,7 +23,7 @@ class filtermod(commands.Cog):
                 await print(f"Guild {message.guild.id} has filter turned off")
 
     @app_commands.command(name = "togglefilter", description= "Toggles the social media filter")
-    @app_commands.checks.has_permissions(managed_guild = True)
+    @app_commands.checks.has_permissions(manage_guild = True)
     async def togglefilter(self, interaction: discord.Interaction):
         if os.path.isfile(f"./configs/{interaction.guild.id}-filter.txt") == False:
 
