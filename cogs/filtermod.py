@@ -47,6 +47,18 @@ class filtermod(commands.Cog):
                 file.close()
                 await print(f"Guild {message.guild.id} has filter turned off")
 
+        if 'https://instagram.com/' in message.content.lower():
+            file = open(f"./configs/{message.guild.id}-filter.txt", "r")
+            temp_int = int(file.read())
+
+            if temp_int == 1:
+                file.close()
+                await message.delete()
+                await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
+            if temp_int == 0:
+                file.close()
+                await print(f"Guild {message.guild.id} has filter turned off")
+
 
     @app_commands.command(name = "togglefilter", description= "Toggles the social media filter")
     @app_commands.checks.has_permissions(manage_guild = True)
