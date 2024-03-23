@@ -29,6 +29,7 @@ class filtermod(commands.Cog):
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(1))
             file.close()
+            print("Created FilterMod File")
 
         file = open(f"../configs/{interaction.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
