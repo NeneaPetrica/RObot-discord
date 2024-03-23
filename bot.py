@@ -25,19 +25,24 @@ async def load():
     for filename in os.listdir('./cogs'):
         if filename.endswith('.py'):
             await bot.load_extension(f'cogs.{filename[:-3]}')
-    
+
+async def main():
+    await load()
+    await bot.start(TOKEN)
+
+asyncio.run(main())
+
+@bot.event
+async def on_ready():
+    print("Bot has connected to Discord")
+    activity = discord.Game(name="/help", type=3)
+    await bot.change_presence(status=discord.Status.dnd, activity=activity)
+
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} command(s)!")
     except Exception as e:
         print(e)
-
-@bot.event
-async def on_ready():
-
-    print("Bot has connected to Discord")
-    activity = discord.Game(name="/help", type=3)
-    await bot.change_presence(status=discord.Status.dnd, activity=activity)
 
 
 @bot.tree.command(name="hello", description="Says hi!")
@@ -201,11 +206,5 @@ async def help(interaction: discord.Interaction):
 
             "/all_in - Doubles your Hugs or lose them all.\n"
             "\n```")
-
-async def main():
-    await load()
-    await bot.start(TOKEN)
-
-asyncio.run(main())
 
 
