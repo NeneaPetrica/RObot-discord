@@ -4,6 +4,7 @@ from discord.ext import commands
 class filtermod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -17,6 +18,7 @@ class filtermod(commands.Cog):
                 await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
             else:
                 print(f"Guild {interaction.guild.id} has filter turned off")
+
 
     @commands.command()
     async def filtermod(self, ctx, *, member: discord.Member = None):
@@ -35,9 +37,6 @@ class filtermod(commands.Cog):
             file.close()
             await ctx.send("Filter is now turned on for this server.")
 
-    @commands.command()
-    async def mimic(self, ctx):
-        await ctx.reply("test command")
 
 async def setup(bot):
     await bot.add_cog(filtermod(bot))
