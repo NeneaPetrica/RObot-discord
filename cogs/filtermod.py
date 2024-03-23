@@ -12,10 +12,6 @@ class filtermod(commands.Cog):
         if 'https://www.instagram.com/' in message.content.lower():
             await message.delete()
             await message.channel.send('FilterMod: Instagram posts are not allowed on the server.')
-    
-    @commands.command()
-    async def filter(self, ctx):
-        await ctx.send('filter on')
 
 
 async def setup(bot):
