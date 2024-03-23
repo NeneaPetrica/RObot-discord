@@ -26,23 +26,23 @@ async def load():
         if filename.endswith('.py'):
             await bot.load_extension(f'cogs.{filename[:-3]}')
 
-async def main():
-    await load()
-    await bot.start(TOKEN)
-
-asyncio.run(main())
-
 @bot.event
 async def on_ready():
     print("Bot has connected to Discord")
     activity = discord.Game(name="/help", type=3)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)
 
+async def main():
+    await load()
+    await bot.start(TOKEN)
+
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} command(s)!")
     except Exception as e:
         print(e)
+
+asyncio.run(main())
 
 
 @bot.tree.command(name="hello", description="Says hi!")
