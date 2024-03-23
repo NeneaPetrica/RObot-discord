@@ -20,3 +20,7 @@ class FliterMod_cog(commands.Cog):
         else:
             await ctx.send(f'Hello {member.name}... This feels familiar.')
         self._last_member = member
+
+
+async def setup(bot):
+    await bot.add_cog(FliterMod_cog(bot))
