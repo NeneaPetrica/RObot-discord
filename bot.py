@@ -7,6 +7,9 @@ import random
 import ctypes
 import asyncio
 
+
+import threading
+
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
 token_file.close()
@@ -137,7 +140,7 @@ async def all_in(interaction: discord.Interaction):
         file.close()
         await interaction.response.send_message("You've doubled your Hugs!!! Really lucky!")
     else:
-        writeHugs(interaction.user.id, temp_int)
+        writeHugs(interaction.user.id, 0)
         await interaction.response.send_message("You've lost all hugs. T-T")
 
 
