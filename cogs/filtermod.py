@@ -21,21 +21,21 @@ class filtermod(commands.Cog):
 
 
     @commands.command()
-    async def togglefilter(self, ctx, *, member: discord.Member = None):
+    async def togglefilter(self, interaction: discord.Interaction):
         """Toggles the filter setting"""
-        file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
+        file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
 
         if temp_int == 0:
-            file = open(f"../configs/{ctx.guild.id}-filter.txt", "w")
+            file = open(f"../configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(1))
             file.close()
-            await ctx.send("Filter is now turned on for this server.")
+            await interaction.response.send_message("Filter is now turned on for this server.")
         else:
-            file = open(f"../configs/{ctx.guild.id}-filter.txt", "w")
+            file = open(f"../configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(0))
             file.close()
-            await ctx.send("Filter is now turned on for this server.")
+            await interaction.response.send_message("Filter is now turned on for this server.")
 
 
 async def setup(bot):
