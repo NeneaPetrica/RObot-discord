@@ -22,7 +22,7 @@ class filtermod(commands.Cog):
                 print(f"Guild {interaction.guild.id} has filter turned off")
         await self.process_commands(message)
 
-    @app_commands.tree.command(name = "togglefilter", description= "What? It works????")
+    @app_commands.tree.CommandTree.add_command(name = "togglefilter", description= "What? It works????")
     async def togglefilter(self, interaction: discord.Interaction):
         file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
         temp_int = int(file.read())
