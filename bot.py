@@ -7,9 +7,6 @@ import random
 import ctypes
 import asyncio
 
-
-import threading
-
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
 token_file.close()
