@@ -39,5 +39,5 @@ class filtermod(commands.Cog):
             await interaction.response.send_message("Filter is now turned on for this server.")
 
 
-async def setup(bot):
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(filtermod(bot))
