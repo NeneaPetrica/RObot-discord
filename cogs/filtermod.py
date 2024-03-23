@@ -12,13 +12,14 @@ class filtermod(commands.Cog):
         if 'https://www.instagram.com/' in message.content.lower():
             file = open(f"./configs/{message.guild.id}.txt", "r")
             temp_int = int(file.read())
-            file.close()
+
 
             if temp_int == 1:
+                file.close()
                 await message.delete()
                 await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
             else:
-                await print(f"Guild {message.guild.id} has filter turned off")
+                file.close()
 
     @app_commands.command(name = "togglefilter", description= "What? It works????")
     async def togglefilter(self, interaction: discord.Interaction):
