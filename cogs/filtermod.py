@@ -36,14 +36,14 @@ class filtermod(commands.Cog):
 
         if temp_int == 0:
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
-            file.write(str(1))
+            file.write(1)
             file.close()
             await interaction.response.send_message("Filter is now turned on for this server.")
         else:
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(0))
             file.close()
-            await interaction.response.send_message("Filter is now turned on for this server.")
+            await interaction.response.send_message("Filter is now turned off for this server.")
 
 
 async def setup(bot: commands.Bot) -> None:
