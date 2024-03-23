@@ -206,10 +206,9 @@ async def on_message(message):
 
     if 'la multi ani' in message.content.lower():
         await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
-    
-    if 'https://www.instagram.com/reel' in message.content.lower():
-        await message.delete()
-        await message.channel.send('FilterMod: Reels are not allowed on the server.')
+
+
+await bot.add_cog(FilterMod(bot))
 
 bot.run(TOKEN)
 
