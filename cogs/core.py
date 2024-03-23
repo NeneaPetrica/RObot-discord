@@ -1,6 +1,8 @@
+import os
 import discord
 from discord.ext import commands
 import random
+import asyncio
 
 def writeHugs(user_id, hugs = int):
     file = open(f"./bank/{user_id}.txt", "r")
