@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class distractie(commands.Cog):
+class ro_fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -21,4 +21,4 @@ class distractie(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(distractie(bot))
+    await bot.add_cog(ro_fun(bot))
