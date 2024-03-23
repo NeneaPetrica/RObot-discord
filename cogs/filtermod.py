@@ -8,13 +8,13 @@ class filtermod(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(message):
+    async def on_message(self, message: discord.Message):
         if 'https://www.instagram.com/' in message.content.lower():
             await message.delete()
             await message.channel.send('FilterMod: Instagram posts are not allowed on the server.')
     
     @commands.command()
-    async def filtermod(self, ctx):
+    async def filter(self, ctx):
         await ctx.send('filter on')
 
 
