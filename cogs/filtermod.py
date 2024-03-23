@@ -18,8 +18,8 @@ class FliterMod_cog(commands.Cog):
             await message.channel.send('FilterMod: Instagram posts are not allowed on the server.')
     
     @commands.command()
-    async def hello(self, ctx):
-        await ctx.send(f'Hello')
+    async def filtermod(self, ctx):
+        await ctx.send(f'filter on')
 
 
 async def setup(bot):
