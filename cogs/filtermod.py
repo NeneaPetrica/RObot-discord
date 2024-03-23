@@ -19,7 +19,7 @@ class FliterMod_cog(commands.Cog):
     
     @commands.command()
     async def filtermod(self, ctx):
-        await ctx.send(f'filter on')
+        await ctx.send('filter on')
 
 
 async def setup(bot):
