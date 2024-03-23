@@ -6,18 +6,18 @@ class ro_fun(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, ctx, message: discord.Message, interaction: discord.Interaction):
+    async def on_message(self, message: discord.Message):
         if 'bag pula' in message.content.lower():
-            await ctx.send('Si eu sa mor!')
+            await message.channel.send('Si eu sa mor!')
 
         if 'mario e gae' in message.content.lower():
-            await ctx.send('Cel mai gaee')
+            await message.channel.send('Cel mai gaee')
 
         if 'sugi pula' in message.content.lower():
-            await ctx.send('O sugi tu ma!')
+            await message.channel.send('O sugi tu ma!')
 
         if 'la multi ani' in message.content.lower():
-            await ctx.send('ADUCETI BAUTURAAAAAA!!!!')
+            await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
 
 
 async def setup(bot):
