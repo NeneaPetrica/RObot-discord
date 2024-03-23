@@ -6,19 +6,12 @@ class ro_fun(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, message: discord.Message):
-        if 'bag pula' in message.content.lower():
-            await message.channel.send('Si eu sa mor!')
+    async def on_ready():
+        print("Test")
 
-        if 'mario e gae' in message.content.lower():
-            await message.channel.send('Cel mai gaee')
-
-        if 'sugi pula' in message.content.lower():
-            await message.channel.send('O sugi tu ma!')
-
-        if 'la multi ani' in message.content.lower():
-            await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
-        await self.process_commands(message)
+    @commands.command()
+    async def ping(self, ctx):
+        await ctx.send("Pong")
 
 
 async def setup(bot):
