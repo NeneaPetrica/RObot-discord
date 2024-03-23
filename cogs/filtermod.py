@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-import asyncio
 
 class filtermod(commands.Cog):
     def __init__(self, bot):
@@ -18,7 +17,7 @@ class filtermod(commands.Cog):
                 await print(f"Guild {interaction.guild.id} has filter turned off")
 
     @commands.command()
-    async def toggle_filter(self, ctx):
+    async def togglefilter(self, ctx):
             """Toggles the filter setting"""
             file = open(f"./configs/{ctx.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
