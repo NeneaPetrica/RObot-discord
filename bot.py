@@ -216,7 +216,7 @@ async def on_message(message):
 
 async def main():
     await load()
-    bot.run(TOKEN)
+    await bot.start(TOKEN)
 
 asyncio.run(main())
 
