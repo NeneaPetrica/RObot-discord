@@ -24,12 +24,14 @@ class filtermod(commands.Cog):
 
     @app_commands.command(name = "togglefilter", description= "What? It works????")
     async def togglefilter(self, interaction: discord.Interaction):
-        
+
         if os.path.isfile(f"./configs/{interaction.guild.id}-filter.txt") == False:
+
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "w")
             file.write(str(1))
             file.close()
             print("Created FilterMod File")
+            await interaction.response.send_message("Filter is now turned on for this server.")
         else:
             file = open(f"./configs/{interaction.guild.id}-filter.txt", "r")
             temp_int = int(file.read())
