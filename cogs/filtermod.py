@@ -19,7 +19,6 @@ class filtermod(commands.Cog):
                 await message.channel.send('FilterMod: Instagram posts are not allowed on this server.')
             else:
                 print(f"Guild {interaction.guild.id} has filter turned off")
-        await self.process_commands(message)
 
 
     @discord.app_commands.command(name = "togglefilter")
