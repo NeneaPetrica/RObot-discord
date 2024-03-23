@@ -1,5 +1,11 @@
+import os
 import discord
+from discord import app_commands
 from discord.ext import commands
+from discord import *
+import random
+import ctypes
+import asyncio
 
 class FliterMod_cog(commands.Cog):
     def __init__(self, bot):
