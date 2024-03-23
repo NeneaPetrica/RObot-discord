@@ -204,7 +204,7 @@ async def help(interaction: discord.Interaction):
 
 async def main():
     await load()
-    await bot.run(TOKEN)
+    await bot.start(TOKEN)
 
 asyncio.run(main())
 
