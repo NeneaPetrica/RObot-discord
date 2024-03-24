@@ -10,7 +10,7 @@ class core(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready():
-        await print("Loading quotes...")
+        print("Loading quotes...")
 
     @app_commands.command(name = "register_quotebook", description= "Makes a server quotebook")
     async def register_quotebook(interaction: discord.Interaction):
@@ -27,7 +27,7 @@ class core(commands.Cog):
             await interaction.response.send_message(response)
         except:
             await interaction.response.send_message("Your server does not have a quote book. To create one use the command: /register_quotebook")
-            
+
     @app_commands.command(name = "add_quote", description= "Adds a quote to the quotebook")
     async def add_quote(interaction: discord.Interaction, new_quote: str):
         quotes_file = open(f"./quotes/{interaction.guild.id}-quotes.txt", 'a')
