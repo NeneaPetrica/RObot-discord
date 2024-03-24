@@ -31,7 +31,7 @@ class quotes(commands.Cog):
     @app_commands.command(name = "add_quote", description= "Adds a quote to the quotebook")
     async def add_quote(self, interaction: discord.Interaction, new_quote: str):
         quotes_file = open(f"./quotes/{interaction.guild.id}-quotes.txt", 'a')
-        quotes_file.write(new_quote)
+        quotes_file.write(f"{new_quote}\n")
         await interaction.response.send_message(f"You added the quote: {new_quote}")
 
 async def setup(bot: commands.Bot) -> None:
