@@ -4,7 +4,7 @@ from discord import app_commands
 import os
 import random
 
-class core(commands.Cog):
+class quotes(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
 
@@ -35,4 +35,4 @@ class core(commands.Cog):
         await interaction.response.send_message(f"You added the quote: {new_quote}")
 
 async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(core(bot))
+    await bot.add_cog(quotes(bot))
