@@ -40,11 +40,6 @@ async def on_ready():
         print(e)
 
 
-@bot.tree.command(name="hello", description="Says hi!")
-async def hello(interaction: discord.Interaction):
-    await interaction.response.send_message(f"Hi, {interaction.user.mention}!")
-
-
 @bot.tree.command(name="dice", description="Rolls a dice")
 async def dice(interaction: discord.Interaction):
     await interaction.response.send_message(random.randint(1, 6))
