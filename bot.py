@@ -79,7 +79,7 @@ p = Pool()
 
 emoteArray = []
 
-def inner_slots(user_id):
+def inner_slots():
 
     for i in range(3):
         temp_val = random.randint(1,4)
@@ -99,7 +99,7 @@ def inner_slots(user_id):
 @bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
 async def slotmachine(interaction: discord.Interaction):
 
-    p.map(inner_slots(user_id=interaction.user))
+    p.map(inner_slots)
 
     emote1 = str(emoteArray[0])
     emote2 = str(emoteArray[1])
