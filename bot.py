@@ -79,8 +79,6 @@ p = Pool()
 
 emoteArray = []
 
-
-
 def inner_slots(user_id):
 
     for i in range(3):
@@ -97,9 +95,6 @@ def inner_slots(user_id):
         
         emoteArray.append(temp_emote)
 
-    if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
-        writeHugs(user_id, 500)
-
 
 @bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
 async def slotmachine(interaction: discord.Interaction):
@@ -109,7 +104,7 @@ async def slotmachine(interaction: discord.Interaction):
     emote1 = str(emoteArray[0])
     emote2 = str(emoteArray[1])
     emote3 = str(emoteArray[2])
-    
+
     if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
         writeHugs(interaction.user.id, 500)
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 500 hugs!")
