@@ -79,9 +79,7 @@ p = Pool()
 
 emoteArray = []
 
-emote1 = str(emoteArray[0])
-emote2 = str(emoteArray[1])
-emote3 = str(emoteArray[2])
+
 
 def inner_slots(user_id):
 
@@ -98,6 +96,10 @@ def inner_slots(user_id):
             temp_emote = ":watermelon:"
         
         emoteArray.append(temp_emote)
+        
+    emote1 = str(emoteArray[0])
+    emote2 = str(emoteArray[1])
+    emote3 = str(emoteArray[2])
 
     if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
         writeHugs(user_id, 500)
