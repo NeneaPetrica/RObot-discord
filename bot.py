@@ -75,11 +75,9 @@ async def balance(interaction: discord.Interaction):
     file.close()
     await interaction.response.send_message(f"You have {temp_int} hugs!")
 
-p = Pool()
-
-emoteArray = []
-
-def inner_slots():
+@bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
+async def slotmachine(interaction: discord.Interaction):
+    emoteArray = []
 
     for i in range(3):
         temp_val = random.randint(1,4)
@@ -94,13 +92,7 @@ def inner_slots():
             temp_emote = ":watermelon:"
         
         emoteArray.append(temp_emote)
-
-
-@bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
-async def slotmachine(interaction: discord.Interaction):
-
-    p.map(inner_slots)
-
+        
     emote1 = str(emoteArray[0])
     emote2 = str(emoteArray[1])
     emote3 = str(emoteArray[2])
