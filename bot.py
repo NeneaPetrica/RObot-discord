@@ -120,8 +120,7 @@ def inner_slots(user_id):
 
 @bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
 async def slotmachine(interaction: discord.Interaction):
-
-    p.map(inner_slots(user_id=interaction.user.id))
+    await p.map(inner_slots(user_id=interaction.user.id))
 
 @bot.tree.command(name="all_in", description="Double or nothing!")
 async def all_in(interaction: discord.Interaction):
