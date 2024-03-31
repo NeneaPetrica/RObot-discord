@@ -79,7 +79,11 @@ p = Pool()
 
 emoteArray = []
 
-def inner_slots():
+emote1 = str(emoteArray[0])
+emote2 = str(emoteArray[1])
+emote3 = str(emoteArray[2])
+
+def inner_slots(user_id):
 
     for i in range(3):
         temp_val = random.randint(1,4)
@@ -95,33 +99,29 @@ def inner_slots():
         
         emoteArray.append(temp_emote)
 
+    if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
+        writeHugs(user_id, 500)
+        return f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 500 hugs!"
+
+    elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
+        writeHugs(user_id, 1000)
+        return f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1000 hugs!"
+
+    elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
+        writeHugs(user_id, 1250)
+        return f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1250 hugs!"
+
+    elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
+        writeHugs(user_id, 100000)
+        return f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!"
+    else:
+        return f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!"
+
 
 @bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
 async def slotmachine(interaction: discord.Interaction):
 
-    p.map(inner_slots)
-
-    emote1 = str(emoteArray[0])
-    emote2 = str(emoteArray[1])
-    emote3 = str(emoteArray[2])
-
-    if (emote1 == ":grapes:" and emote2 == ":grapes:" and emote3 == ":grapes:"):
-        writeHugs(interaction.user.id, 500)
-        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 500 hugs!")
-
-    elif (emote1 == ":cherries:" and emote2 == ":cherries:" and emote3 == ":cherries:"):
-        writeHugs(interaction.user.id, 1000)
-        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1000 hugs!")
-
-    elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
-        writeHugs(interaction.user.id, 1250)
-        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1250 hugs!")
-
-    elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
-        writeHugs(interaction.user.id, 100000)
-        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!")
-    else:
-        await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
+    p.map(inner_slots(user_id=interaction.user.id))
 
 @bot.tree.command(name="all_in", description="Double or nothing!")
 async def all_in(interaction: discord.Interaction):
