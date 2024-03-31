@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import random
 import asyncio
+from multiprocessing import Pool
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
@@ -74,9 +75,11 @@ async def balance(interaction: discord.Interaction):
     file.close()
     await interaction.response.send_message(f"You have {temp_int} hugs!")
 
-@bot.tree.command(name="slotmachine", description="Get more slots from gambling!")
-async def slotmachine(interaction: discord.Interaction):
-    emoteArray = []
+p = Pool()
+
+emoteArray = []
+
+def inner_slots():
 
     for i in range(3):
         temp_val = random.randint(1,4)
@@ -91,7 +94,13 @@ async def slotmachine(interaction: discord.Interaction):
             temp_emote = ":watermelon:"
         
         emoteArray.append(temp_emote)
-        
+
+
+@bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
+async def slotmachine(interaction: discord.Interaction):
+
+    p.map(inner_slots)
+
     emote1 = str(emoteArray[0])
     emote2 = str(emoteArray[1])
     emote3 = str(emoteArray[2])
@@ -113,7 +122,6 @@ async def slotmachine(interaction: discord.Interaction):
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!")
     else:
         await interaction.response.send_message(f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!")
-
 
 @bot.tree.command(name="all_in", description="Double or nothing!")
 async def all_in(interaction: discord.Interaction):
