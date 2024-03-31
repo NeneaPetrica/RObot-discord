@@ -111,13 +111,13 @@ def inner_slots(user_id):
 
     elif (emote1 == ":strawberry:" and emote2 == ":strawberry:" and emote3 == ":strawberry:"):
         writeHugs(user_id, 1250)
-        temp_string = ">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1250 hugs!"
+        temp_string = f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 1250 hugs!"
 
     elif (emote1 == ":watermelon:" and emote2 == ":watermelon:" and emote3 == ":watermelon:"):
         writeHugs(user_id, 100000)
-        temp_string = ">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!"
+        temp_string = f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n You won 100,000 hugs! JACKPOT!"
     else:
-        temp_string = ">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!"
+        temp_string = f">{emoteArray[0]}|{emoteArray[1]}|{emoteArray[2]}<\n Better luck next time!"
 
 
 @bot.tree.command(name="slotmachine", description="Get more hugs from gambling!")
