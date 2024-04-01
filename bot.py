@@ -42,7 +42,7 @@ async def on_ready():
 
 @bot.tree.command(name = "reload", description= "reloads bot")
 async def reload():
-    os.execv("/usr/local/bin/python3.8", ["python3"] + ["~/update.py"])
+    os.execv(["python3"] + ["~/update.py"])
     main()
 
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
