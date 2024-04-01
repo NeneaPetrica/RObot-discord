@@ -4,6 +4,11 @@ from discord import app_commands
 import os
 import random
 
+quoteHelp = """\n ==== Quote books ====\n
+                /register-quotebook - Makes a special quotebook for the server \n
+                /add_quote {new_quote} - Adds a quote to the server quotebook \n
+                /quote - Says a random quote from the server quotebook \n"""
+
 class quotes(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
