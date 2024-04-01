@@ -16,8 +16,8 @@ class core(commands.Cog):
     async def hello(self, interaction: discord.Interaction):
         await interaction.response.send_message(f"Hi, {interaction.user.mention}!")
     
-    @app_commands.command(name = "test_rel", description= "Toggles the social media filter")
-    async def test_rel(self, interaction: discord.Interaction):
+    @app_commands.command(name = "reload_test", description= "Toggles the social media filter")
+    async def reload_test(self, interaction: discord.Interaction):
         await interaction.response.send_message(f"Testing rel works!!!, {interaction.user.mention}!")
 
     @app_commands.command(name = "dice", description= "Rolls a dice")
