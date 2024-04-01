@@ -9,7 +9,7 @@ class economy(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready():
-       await print("Loading police.py...")
+       await print("Loading economy.py...")
     
     @app_commands.command(name="slots", description="Get more hugs from gambling!")
     async def slots(self, interaction: discord.Interaction):
