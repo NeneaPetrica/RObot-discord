@@ -4,21 +4,6 @@ from discord import app_commands
 import random
 import os
 
-economyHelp ="""
-                \n ==== HugBank ====\n"
-                /hug_register - Registers you to HugBank\n
-                /hug {tag a user} - Sends a hug to the hugged user\n
-                /balance - See the hug balance\n
-
-                \n ==== Gambling ====\n 
-                /slots - You play slots and can win Hugs!\n
-                \n Slots Prizes:
-                \n >🍇|🍇|🍇< for 500 hugs\n
-                >🍒|🍒|🍒< for 1000 hugs\n
-                >🍓|🍓|🍓< for 1250 hugs\n
-                >🍉|🍉|🍉< for the JACKPOT (which is secret)\n\n
-                /all_in - Doubles your Hugs or lose them all.\n"""
-
 def writeHugs(user_id, hugs = int):
     file = open(f"./bank/{user_id}.txt", "r")
     temp_int = int(file.read())
