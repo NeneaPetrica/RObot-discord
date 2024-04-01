@@ -18,9 +18,8 @@ class ro_fun(commands.Cog):
 
         if 'la multi ani' in message.content.lower():
             await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
-        
-        mention = f'<@!{self.bot.user.id}>'
-        if mention in message.content:
+
+        if discord.User.mentioned_in(message.content):
             await message.channel.send("You mentioned me")
 
 
