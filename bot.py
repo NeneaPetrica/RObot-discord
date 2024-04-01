@@ -4,6 +4,7 @@ from discord.ext import commands
 import random
 import asyncio
 from multiprocessing import Pool
+import subprocess
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
@@ -42,8 +43,10 @@ async def on_ready():
 
 @bot.tree.command(name = "reload", description= "reloads bot")
 async def reload(interaction: discord.Interaction):
-    os.execv(["python3"] + ["~/update.py"])
-    main()
+    print("reloading bot...")
+    subprocess.run(["git pull"]) 
+    load()
+    await interaction.response.send_message("bot reloaded")
 
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
 async def hug_register(interaction: discord.Interaction):
