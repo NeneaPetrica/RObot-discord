@@ -31,7 +31,6 @@ async def unload():
         
 @bot.event
 async def on_ready():
-
     print("Bot has connected to Discord")
     activity = discord.Game(name="/help", type=3)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)

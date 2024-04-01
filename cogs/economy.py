@@ -17,7 +17,7 @@ class economy(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready():
-       await print("Loading economy.py...")
+        print("Loading economy.py...")
 
     @app_commands.command(name="balance", description="See the hug balance")
     async def balance(self, interaction: discord.Interaction):

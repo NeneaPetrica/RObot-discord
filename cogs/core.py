@@ -10,7 +10,7 @@ class core(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready():
-       await print("Loading core...")
+        print("Loading core...")
 
     @app_commands.command(name = "hello", description= "Toggles the social media filter")
     async def hello(self, interaction: discord.Interaction):
