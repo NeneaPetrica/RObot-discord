@@ -50,16 +50,9 @@ async def on_ready():
 @bot.tree.command(name = "reload", description= "reloads bot")
 async def reload(interaction: discord.Interaction):
     await interaction.response.defer()
-    for filename in os.listdir('./cogs'):
-        if filename.endswith('.py'):
-            await bot.unload_extension(f"cogs.{filename[:-3]}")
-
-    subprocess.run(["git pull"])
-
-    for filename in os.listdir('./cogs'):
-        if filename.endswith('.py'):
-            await bot.load_extension(f'cogs.{filename[:-3]}')
-
+    await unload()
+    await subprocess.run(["git pull"])
+    await load()
     await interaction.response.send_message("bot reloaded")
 
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
