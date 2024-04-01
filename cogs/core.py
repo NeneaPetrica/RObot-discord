@@ -38,28 +38,28 @@ class core(commands.Cog):
         await interaction.response.send_message(
 """```
 Hi, my name is AstroBot! I am here to make your day a bit better!\n
-This is what I can do:\n \n
+This is what I can do:\n
 
-\n ==== Moderation ====\n
+ ==== Moderation ====\n
 /togglefilter - Toggles a pre-defined social media filter. If is on, posts from Instagram will be instantly deleted. \n
 /delete {messages} - Deletes the specified number of messages \n
 
-\n ==== Small Commands ==== \n
+==== Small Commands ==== \n
 /hello - Says hi to you :) \n
 /dice - Roll a dice \n
 /poke {user} - Pokes the mentioned user \n
                 
-\n ==== Quote books ====\n
+==== Quote books ====\n
 /register-quotebook - Makes a special quotebook for the server \n
 /add_quote {new_quote} - Adds a quote to the server quotebook \n
 /quote - Says a random quote from the server quotebook \n
                 
-\n ==== HugBank ====\n
+==== HugBank ====\n
 /hug_register - Registers you to HugBank\n
 /hug {user} - Sends a hug to the hugged user\n
 /balance - See the hug balance\n
 
-\n ==== Gambling ====\n 
+==== Gambling ====\n 
 /slots - You play slots and can win Hugs!\n
 \n Slots Prizes:\n
 >🍇|🍇|🍇< for 500 hugs\n
