@@ -5,6 +5,7 @@ from discord import app_commands
 class police(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
+        print("Loading police.py...")
 
     @commands.Cog.listener()
     async def on_ready():
