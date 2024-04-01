@@ -53,10 +53,13 @@ async def on_ready():
 
 @bot.tree.command(name = "reload", description= "reloads bot")
 async def reload(interaction: discord.Interaction):
-    await unload()
-    os.system("git pull")
-    await load()
-    await interaction.response.send_message("bot reloaded")
+    if interaction.user.id == bot.owner_id:
+        await unload()
+        os.system("git pull")
+        await load()
+        await interaction.response.send_message("Bot reloaded successfully")
+    else:
+        await interaction.response.send_message("You're not the bot owner.")
 
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
 async def hug_register(interaction: discord.Interaction):
