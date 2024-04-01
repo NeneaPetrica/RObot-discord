@@ -14,7 +14,7 @@ class police(commands.Cog):
     @app_commands.checks.has_permissions(manage_guild = True)
     async def delete(self, interaction: discord.Interaction, messages: int):
         await interaction.response.defer()
-        deleted = await interaction.channel.purge(limit=messages)
+        deleted = await interaction.channel.purge(limit=messages, bulk= True)
         await interaction.channel.send(f'Deleted {len(deleted)} message(s)')
 
 async def setup(bot: commands.Bot) -> None:
