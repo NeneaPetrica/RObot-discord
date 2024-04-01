@@ -14,7 +14,7 @@ class police(commands.Cog):
     async def delete(self, interaction: discord.Interaction, messages: int):
         if interaction.user.guild_permissions.manage_messages == True:
             await interaction.response.defer()
-            deleted = await interaction.channel.purge(limit=messages, bulk= True)
+            deleted = await interaction.channel.purge(limit=messages + 1, bulk= True)
             await interaction.channel.send(f'Deleted {len(deleted)} message(s)')
         else:
             await interaction.response.send_message("You don't have the following permission: manage_messages.")
