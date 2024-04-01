@@ -17,7 +17,7 @@ class police(commands.Cog):
             deleted = await interaction.channel.purge(limit=messages, bulk= True)
             await interaction.channel.send(f'Deleted {len(deleted)} message(s)')
         else:
-            await interaction.channel.send("You don't have the following permission: manage_guild.")
+            await interaction.response.send_message("You don't have the following permission: manage_guild.")
     
 
 
