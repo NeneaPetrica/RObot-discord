@@ -41,7 +41,7 @@ async def on_ready():
         print(e)
 
 @bot.tree.command(name = "reload", description= "reloads bot")
-async def reload():
+async def reload(interaction: discord.Interaction):
     os.execv(["python3"] + ["~/update.py"])
     main()
 
