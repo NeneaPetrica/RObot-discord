@@ -4,7 +4,6 @@ from discord import app_commands
 import os
 import random
 from economy import economyHelp
-from quotes import quoteHelp
 
 coreHelp = """\n ==== Small Commands ====\n
                 /hello - Says hi to you :)\n
