@@ -4,6 +4,7 @@ from discord.ext import commands
 class ro_fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        print("Adding a bit of fun...")
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):

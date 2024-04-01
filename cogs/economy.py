@@ -14,6 +14,7 @@ def writeHugs(user_id, hugs = int):
 class economy(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
+        print("Loading economy.py...")
 
     @commands.Cog.listener()
     async def on_ready():

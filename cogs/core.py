@@ -7,6 +7,7 @@ import random
 class core(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
+        print("Loading core...")
 
     @commands.Cog.listener()
     async def on_ready():

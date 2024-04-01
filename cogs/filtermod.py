@@ -6,6 +6,7 @@ import os
 class filtermod(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.bot = bot
+        print("Loading filters...")
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
