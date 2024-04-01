@@ -54,7 +54,7 @@ async def on_ready():
 @bot.tree.command(name = "reload", description= "reloads bot")
 async def reload(interaction: discord.Interaction):
     if interaction.user.id == 1141432364162105354:
-        os.system("git pull")
+        await os.system("git pull")
         await reload()
         await interaction.response.send_message("Bot reloaded successfully")
     else:
