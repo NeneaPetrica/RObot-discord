@@ -45,7 +45,6 @@ class core(commands.Cog):
                 "This is what I can do:\n \n"
 
                 f"{coreHelp}"
-                f"{quoteHelp}"
                 f"{economyHelp}"
                 "\n```")
 
