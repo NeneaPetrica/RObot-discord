@@ -19,9 +19,6 @@ class ro_fun(commands.Cog):
         if 'la multi ani' in message.content.lower():
             await message.channel.send('ADUCETI BAUTURAAAAAA!!!!')
 
-        if discord.User.mention in message.content:
-            await message.channel.send("You mentioned me")
-
 
 async def setup(bot):
     await bot.add_cog(ro_fun(bot))
