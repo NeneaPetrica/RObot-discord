@@ -35,10 +35,7 @@ class core(commands.Cog):
 
     @app_commands.command(name = "help", description= "Tells what AstroBot can do")
     async def help(self, interaction: discord.Interaction):
-        channel = await interaction.user.create_dm()
-        await channel.send("Testing DMs")
-        await interaction.response.send_message(
-"""```
+        helpText = """```
 Hi, my name is AstroBot! I am here to make your day a bit better!\n
 This is what I can do:\n
 
@@ -69,7 +66,10 @@ This is what I can do:\n
 >🍓|🍓|🍓< for 1250 hugs\n
 >🍉|🍉|🍉< for the JACKPOT (which is secret)\n\n
 /all_in - Doubles your Hugs or lose them all.\n
-\n```""")
+\n```"""
+        channel = await interaction.user.create_dm()
+        await channel.send(helpText)
+        await interaction.response.send_message("Check DMs for /help.")
 
 async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(core(bot))
