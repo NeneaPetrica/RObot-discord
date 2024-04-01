@@ -12,8 +12,9 @@ class police(commands.Cog):
     async def on_ready():
        await print("Loading police.py...")
 
-    @app_commands.command(name = "delete", description= "Deletes messages")
-    async def delete(self, selection: 0, interaction: discord.Interaction, message: discord.Message):
+    @app_commands.command(name = "delete", description="Deletes messages")
+    @app_commands.checks.has_permissions(manage_guild = True)
+    async def delete(self, selection: 0, message: discord.Message):
         for i in selection:
             await message.delete()
 
