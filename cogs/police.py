@@ -14,7 +14,7 @@ class police(commands.Cog):
 
     @app_commands.command(name = "delete", description="Deletes messages")
     @app_commands.checks.has_permissions(manage_guild = True)
-    async def delete(self, message: discord.Message, selection: 0):
+    async def delete(self, message: discord.Message, selection: None):
         for i in selection:
             await message.delete()
 
