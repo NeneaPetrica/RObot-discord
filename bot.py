@@ -1,9 +1,7 @@
 import os
 import discord
 from discord.ext import commands
-import random
 import asyncio
-import subprocess
 
 token_file = open("token.txt", "r")
 TOKEN = str(token_file.read())
