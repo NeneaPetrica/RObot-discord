@@ -20,6 +20,18 @@ class core(commands.Cog):
     async def dice(self, interaction: discord.Interaction):
         await interaction.response.send_message(random.randint(1, 6))
 
+    @app_commands.command(name = "poke", description= "Pokes the specified user")
+    async def poke(self, interaction: discord.Interaction, user: discord.Member = None):
+        pokeArray = ["https://media1.tenor.com/m/_C06NtBa8pcAAAAC/mochi-poke-poke-cute-cat.gif",
+                     "https://media1.tenor.com/m/hlrUN-PqmpsAAAAd/seals-yo-chan.gif",
+                     "https://media1.tenor.com/m/o9X9XXVCm-MAAAAd/bird-cute.gif"]
+        
+        gif = pokeArray[random.randint(0,3)]
+
+        await interaction.response.send_message(f"{interaction.user.mention} poked <@{user.id}>!"
+                                                "\n"
+                                                f"{gif}")
+
     @app_commands.command(name = "help", description= "Tells what AstroBot can do")
     async def help(self, interaction: discord.Interaction):
         await interaction.response.send_message(
