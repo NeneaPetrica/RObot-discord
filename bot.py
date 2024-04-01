@@ -48,7 +48,7 @@ async def on_ready():
 
 @bot.tree.command(name = "reload", description= "reloads bot")
 async def reload(interaction: discord.Interaction):
-    subprocess.run(["git pull"])
+    os.system("git pull")
     await interaction.response.defer()
     await reload()
     await interaction.response.send_message("bot reloaded")
