@@ -35,6 +35,7 @@ class core(commands.Cog):
 
     @app_commands.command(name = "help", description= "Tells what AstroBot can do")
     async def help(self, interaction: discord.Interaction):
+        interaction.user.dm_channel.send("test dm")
         await interaction.response.send_message(
 """```
 Hi, my name is AstroBot! I am here to make your day a bit better!\n
