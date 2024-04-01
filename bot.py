@@ -40,6 +40,11 @@ async def on_ready():
     except Exception as e:
         print(e)
 
+@bot.tree.command(name = "reload", description= "reloads bot")
+async def reload():
+    os.execv("/usr/local/bin/python3.8", ["python3"] + ["~/update.py"])
+    main()
+
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
 async def hug_register(interaction: discord.Interaction):
     if os.path.isfile(f"./bank/{interaction.user.id}.txt"):

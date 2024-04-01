@@ -1,1 +1,1 @@
-git pull && ./run.sh
+git pull
