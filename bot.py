@@ -51,15 +51,6 @@ async def on_ready():
     except Exception as e:
         print(e)
 
-@bot.tree.command(name = "reload", description= "reloads bot")
-async def reload(interaction: discord.Interaction):
-    if interaction.user.id == 1141432364162105354:
-        os.system("git pull")
-        reload()
-        await interaction.response.send_message("Bot reloaded successfully")
-    else:
-        await interaction.response.send_message("You're not the bot owner.")
-
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
 async def hug_register(interaction: discord.Interaction):
     if os.path.isfile(f"./bank/{interaction.user.id}.txt"):
