@@ -15,9 +15,9 @@ class police(commands.Cog):
     async def delete(self, interaction: discord.Interaction, messages: int):
         deleted = await interaction.channel.purge(limit=messages)
         if len(deleted) == messages:
-            await interaction.response.send_message(f'Deleted {messages} message(s)')
+            interaction.response.send_message(f'Deleted {messages} message(s)')
         else:
-            await interaction.response.send_message(f'Deleted {len(deleted)} message(s)')
+            interaction.response.send_message(f'Deleted {len(deleted)} message(s)')
 
 async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(police(bot))
