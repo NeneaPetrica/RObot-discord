@@ -36,26 +36,27 @@ class core(commands.Cog):
     @app_commands.command(name = "help", description= "Tells what AstroBot can do")
     async def help(self, interaction: discord.Interaction):
         await interaction.response.send_message(
-                """```Hi, my name is AstroBot! I am here to make your day a bit better!\n"
-                "This is what I can do:\n \n"
+                """```
+                Hi, my name is AstroBot! I am here to make your day a bit better!\n
+                This is what I can do:\n \n
 
-                "\n ==== Small Commands ====\n"
-                "/hello - Says hi to you :)\n"
-                "/dice - Roll a dice\n"
-                
-                "\n ==== Quote books ====\n"
-                "/register-quotebook - Makes a special quotebook for the server \n"
-                "/add_quote {new_quote} - Adds a quote to the server quotebook \n"
-                "/quote - Says a random quote from the server quotebook \n"
-                
-                "\n ==== HugBank ====\n"
-                "/hug_register - Registers you to HugBank\n"
-                "/hug {tag a user} - Sends a hug to the hugged user\n"
-                "/balance - See the hug balance\n"
+                \n ==== Moderation ====\n
+                /togglefilter - Toggles a pre-defined social media filter. If is on, posts from Instagram will be instantly deleted. \n
+                /delete {messages} - Deletes the specified number of messages \n
 
-                \n ==== HugBank ====\n"
+                \n ==== Small Commands ==== \n
+                /hello - Says hi to you :) \n
+                /dice - Roll a dice \n
+                /poke {user} - Pokes the mentioned user \n
+                
+                \n ==== Quote books ====\n
+                /register-quotebook - Makes a special quotebook for the server \n
+                /add_quote {new_quote} - Adds a quote to the server quotebook \n
+                /quote - Says a random quote from the server quotebook \n
+                
+                \n ==== HugBank ====\n
                 /hug_register - Registers you to HugBank\n
-                /hug {tag a user} - Sends a hug to the hugged user\n
+                /hug {user} - Sends a hug to the hugged user\n
                 /balance - See the hug balance\n
 
                 \n ==== Gambling ====\n 
@@ -66,7 +67,7 @@ class core(commands.Cog):
                 >🍓|🍓|🍓< for 1250 hugs\n
                 >🍉|🍉|🍉< for the JACKPOT (which is secret)\n\n
                 /all_in - Doubles your Hugs or lose them all.\n
-                
+
                 "\n```""")
 
 async def setup(bot: commands.Bot) -> None:
