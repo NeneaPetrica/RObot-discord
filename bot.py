@@ -59,7 +59,6 @@ async def reload(interaction: discord.Interaction):
         if filename.endswith('.py'):
             await bot.unload_extension(f"cogs.{filename[:-3]}")
             
-    print("loaded cogs")
     await interaction.response.send_message("bot reloaded")
 
 @bot.tree.command(name="hug_register", description="Register at the HugBank")
