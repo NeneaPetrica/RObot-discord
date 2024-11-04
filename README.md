@@ -33,11 +33,11 @@ AstroBot is a small companion for your server. They can do simple things such as
 <ul>
     <li>/slotmachine - You play slots and can win Hugs
     <br>
-    Slots Prizes: 
-    >🍇|🍇|🍇< for 500 hugs
-    >🍒|🍒|🍒< for 1000 hugs
-    >🍓|🍓|🍓< for 1250 hugs
-    >🍉|🍉|🍉< for the JACKPOT (which is secret)
+    Slots Prizes: <br>
+    >🍇|🍇|🍇< for 500 hugs <br>
+    >🍒|🍒|🍒< for 1000 hugs <br>
+    >🍓|🍓|🍓< for 1250 hugs <br>
+    >🍉|🍉|🍉< for the JACKPOT (which is secret) <br>
     </li>
     <li>/all_in - Doubles the hugs or gives nothing back</li>
 </ul>
@@ -59,3 +59,10 @@ AstroBot is a small companion for your server. They can do simple things such as
     <li>/dice - a normal dice roll</li>
 </ul>
 
+<hr>
+
+<h2>Support me</h2>
+
+<br>
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="mircea35" data-color="#FFDD00" data-emoji="☕"  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
